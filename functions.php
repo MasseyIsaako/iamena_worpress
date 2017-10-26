@@ -11,9 +11,9 @@ function enaThemeEnqueues(){
 add_action( "wp_enqueue_scripts", "enaThemeEnqueues" );
 add_theme_support("custom-background");
 
-// For header images
+// FOR HEADER IMAGES
 $customHeaderSettings = array(
-	"default-image" => "",
+	"default-image" => "../../../uploads/2017/10/placeholder.jpg",
 	"width" => 100,
 	"height" => 50,
 	"flex-height" => true,
@@ -25,3 +25,27 @@ $customHeaderSettings = array(
 );
 
 add_theme_support("custom-header", $customHeaderSettings);
+
+// ADDING WIDGETS
+function enaNavbarSetup(){
+	$enaNavbarSettings = array(
+		"name"          => "Sidebar",
+		"id"            => "enanavbar-1",
+		"description"   => "This is the sidebar.",
+		"class"         => "custom",
+		"before_widget" => "<div id='%1$s' class='widget %2$s'>",
+		"after_widget"  => "</div>",
+		"before_title"  => "<small class='widgettitle'>",
+		"after_title"   => "</small>",
+	);
+
+	register_sidebar($enaNavbarSettings);
+}
+
+add_action("widgets_init", "enaNavbarSetup");
+
+// ADDING FEATURED HEADER IMAGES FOR EACH POST
+add_theme_support("post-thumbnails");
+
+
+

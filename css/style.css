@@ -5,6 +5,7 @@
 body, html{
 	padding:0px;
 	margin:0px;
+	overflow-x:hidden;
 }
 
 *{
@@ -12,26 +13,139 @@ body, html{
 	float:left;
 }
 
-/*Wrapper*/
-#wrapper{
+/*WRAPPER FOR THE TOP SECTION OF THE PAGE*/
+#home-wrapper{
 	height:100vh;
 	width:100vw;
 	background-color:#F7F5ED;
 }
 
+/*NAVIGATION*/
 .nav-container{
+	position:fixed;
 	display:flex;
 	align-items:center;
 	flex-direction:row;
 	width:100vw;
 	min-height:100px;
-	background-color:red;
+	background-color:#F7F5ED;
 	font-family:"Oxygen", sans-serif;
 	justify-content:space-between;
+	padding:10px 25px;
+	z-index:100;
+	box-shadow:0px 0px 5px 3px #333333;
 }
 
 #ena-logo{
-	width:50px;
-	height:50px;
-	background-color:blue;
+	width:100px;
+	height:100px;
+	background-image:url("../../../uploads/2017/10/logo.png");
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+	background-attachment:scroll;
+}
+
+.screen-reader-text{display:none;}
+
+/*FRONT IMAGE: CUSTOMISABLE THROUGH CHANGING IMAGE USING WORDPRESS*/
+#header-image-container{
+	position:fixed;
+	width:100vh;
+	width:100vw;
+	overflow:hidden;
+	z-index:0;
+}
+
+#header-image-container img{
+	width:100%;
+	height:100%;
+}
+
+/*OVERLAY FOR IMAGE CONTAINER*/
+#header-container-overlay{
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-color:rgba(0, 0, 0, 0.55);
+	z-index:9;
+}
+
+#header-container-overlay p{
+	font-family:"Lora", serif;
+	font-size:16px;
+	letter-spacing:1px;
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	color:white;
+	text-align:center;
+}
+
+#header-container-overlay .fa-chevron-down {
+	position:fixed;
+	bottom:20%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	color:white;
+}
+
+/*POST CONTAINER*/
+#posts-container{
+	position:relative;
+	box-shadow:0px 0px 5px 3px #333333;
+	width:100%;
+	height:auto;
+	z-index:10;
+	background-color:#F7F5ED;
+}
+
+/*STYLING INITIAL POSTS*/
+.post-styling{
+	position:relative;
+	width:80%;
+	margin:20px 10%;
+	min-height:150px;
+	border-radius:5px;
+	background-color:#F8E7A4;
+	padding:10px 20px;
+	font-family:"Lora", serif;
+	height:auto;
+}
+
+.post-styling h3{
+	font-family:"Oxygen", sans-serif;
+	width:100%;
+	text-align:center;
+	margin:0px;
+}
+
+.date-styling i{
+	width:100% !important;
+	text-align:center;
+}
+
+.thumbnail-container{
+	width:25%;
+	height:200px;
+	overflow:hidden;
+}
+
+.attachment-thumbnail{
+	width:100%;
+	height:auto;
+}
+
+.post-text-container{
+	width:75%;
+}
+
+/*CONTACT INFO AND OPENING HOURS*/
+#footer{
+	position:relative;
+	z-index:10;
+	background-color:#F7F5ED;
+	width:100vw;
+	min-height:100px;
 }
